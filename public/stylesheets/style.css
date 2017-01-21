@@ -1,4 +1,6 @@
 body {
+  margin-top: 3em; /*This is unecessary. There is already a padding of 50px and it
+  is the one defining the distance on the top of the page.*/
   padding: 50px;
   font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

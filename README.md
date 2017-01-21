@@ -29,9 +29,9 @@ https://www.youtube.com/watch?v=WYa47JkZH_U
   (dude did it with an array and then a .insert())
   * knex seed:run
 * [X] List all records with GET/todo
-  * go to app.js to create a beginning route
-  * Duplicate the index.js file in the routes folder and change the title in res.render
-  * define a new variable in the app.js file for the "require"
+  * go to app.js to create a route. app.js is the beginning of the express app. He did nothing on this step, he just explained.
+  * Duplicate the index.js file in the routes folder and change the title in res.render. Name the file "todo.js"
+  * define a new variable named "todo" in the app.js file for the "require"
   * do a new app.use for ('/todo', todo)
   This means that the url extension /todo runs the file todo.js
   * go to the browser and type "localhost:3000/todo" to confirm
@@ -44,10 +44,33 @@ https://www.youtube.com/watch?v=WYa47JkZH_U
   * get all the rows from the file from the router.get settings in the todo.js file. In the tutorial, because the dude did a res.render('all'), there was an error when looking on the browser. That is because the file "all" was not set up in the views directory
   * in the views directory set up a file called all.hbs.
   https://www.youtube.com/watch?v=WYa47JkZH_U
+* [X] Add bootstrap
+  * go to bootstrap / getting started. copy the <link> tag and paste it at layout.hbs. The layout is the container for all the views that are handled in handlebars.
+  * In the layout.hbs, he pasted the bootstrap link along with the existing css link.
+  * Gave to body the "container" class
+  * went to components to get a list-group ul. Then pasted it in the all.hbs page. He is rendering the {{title}} inside the <li> tags
+  * he added margin-top in the body tag from the style.css file.
+* [X] Show new form with /todo/new
+  * Went to the todo.js file to create a new route for the form
+  * Created a new.hbs file in the "views" folder
+  * Created a form in the new.hbs with a single input. He gave classes in the div tag and an id to the form. He probably knew what to expect from prior work with bootstrap.
+  * he went to the "all.hbs" page and created a button which he then converted in an anchor. This button is used for redirecting to the "/todo/new" page
+  * Went to bootstrap to check on the colors for the buttons (in css page) and chose btn-primary class for the button.
+  * Created a text area tag for the description. Included in a div tag and with a label, same pattern like before with the appropriate ids and classes.
+  * Created a priority dropdown, same pattern
+  * Created a button with "type = 'submit'".
+* [X] Create a record with Post/todo
+  * Created a router.post in todo.js for "/"
+  * Created function validTodo in order to confirm that some conditions are met in order to accept that the object data is valid
+  * Created a "todo" object in the router.post which collects all the req.body arguments
+  * Pushed all the data through knex - insert - then
+  * updated the "else" statement to provide a 500 error
+  * we needed to update the forms. All inputs should have a name. Also the priority field returns as a string but it should be a number.
+  * we needed to update the todo variable in order to have a date entry
+  * we needed to update the confirmation function in order to confirm that the priority is a number
 
-  up to 19:37
-* [ ] Add bootstrapShow new form with /todo/new
-* [ ] Create a record with Post/todo
+
+  40:56 https://www.youtube.com/watch?v=WYa47JkZH_U
 * [ ] Show one record with GET/todo/:id
 * [ ] Show an edit form with GET /todo/:id/edit
 * [ ] Update a record with PUT/todo/:id
